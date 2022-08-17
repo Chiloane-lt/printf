@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "main.h"
 
@@ -17,6 +18,7 @@ int _printf(const char *format, ...)
 		while (format[i] != '%')
 		{	_putchar(format[i]);
 			i++;
+
 		}
 		i++;
 
@@ -49,5 +51,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	return (0);
+	return (i);
 }
