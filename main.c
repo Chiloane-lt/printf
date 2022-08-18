@@ -16,8 +16,8 @@ int main()
   _printf("String is %s\n" , str);
    /*_printf("Float value is %f \n", flt);*/
     /*_printf("Double value is %lf \n", dbl);*/
-   /*_printf("Octal value is %o \n", no);*/
-   /*_printf("Hexadecimal value is %x \n", no);*/
+   _printf("Octal value is %o \n", no);
+   _printf("Hexadecimal value is %x \n", no);
 
    return 0;
 }

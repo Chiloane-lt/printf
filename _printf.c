@@ -31,6 +31,14 @@ int _printf(const char *format, ...)
 				_puts(_itoa((va_arg(args, int)), num));
 
 			}
+			else if (*format == 'o')
+			{
+				_puts(_itoa_o((va_arg(args, int)), num));
+			}
+			else if (*format == 'x')
+			{
+				_puts(_itoa_x((va_arg(args, int)), num));
+			}
 			else if (*format == '%')
 			{
 				 _putchar('%');
