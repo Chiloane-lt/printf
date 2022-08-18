@@ -13,7 +13,7 @@ int main()
   _printf("Integer value is %d\n", no);
    _printf("This is a percent: %%\n");
    _printf("This string is unformated\n");
-  _printf("String is %s \n" , str);
+  _printf("String is %s\n" , str);
    /*_printf("Float value is %f \n", flt);*/
     /*_printf("Double value is %lf \n", dbl);*/
    /*_printf("Octal value is %o \n", no);*/

@@ -21,17 +21,17 @@ int _printf(const char *format, ...)
 				c = (char) va_arg(args, int);
 				_putchar(c + 0);
 			}
-			if (*format == 's')
+			else if (*format == 's')
 			{
 				s = va_arg(args, char *);
 				_puts(s);
 			}
-			if (*format == 'd')
+			else if (*format == 'd')
 			{
 				_puts(_itoa((va_arg(args, int)), num));
 
 			}
-			if (*format == '%')
+			else if (*format == '%')
 			{
 				 _putchar('%');
 			}
