@@ -4,6 +4,7 @@
  * _itoa = Coverts a number string to a character string
  * @value: input string to convert
  * @s: string to store the converted string
+ *Notes: Assumes base 10
  */
 
 char *_itoa(int value, char *s)
