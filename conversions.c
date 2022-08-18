@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _itoa = Coverts a number string to a character string
+ * _itoa - Coverts a number string to a character string
  * @value: input string to convert
  * @s: string to store the converted string
+ * Return: pointer to buffer string
  * Notes: Does not assume base 10
  */
 
@@ -14,10 +15,10 @@ char *_itoa(int value, char *s)
 	p = value;
 
 	if (value == 0)
-        {
-                s[i++] = '0';
-        }
-	
+	{
+		s[i++] = '0';
+	}
+
 	if (p < 0)
 	{
 		value = value * -1;
@@ -38,14 +39,16 @@ char *_itoa(int value, char *s)
 
 	 _strrev(s);
 
-	 return (s);
+	return (s);
 }
 
 /**
- * _itoa = Coverts a number string to a character string
+ * _itoa_o - Coverts a number string to an octal
+ * character string
  * @value: input string to convert
  * @s: string to store the converted string
- *Notes: Assumes base 8 
+ * Return: pointer to buffer string
+ *Notes: Assumes base 8
  */
 
 char *_itoa_o(int value, char *s)
@@ -75,14 +78,15 @@ char *_itoa_o(int value, char *s)
 
 	 _strrev(s);
 
-	 return (s);
+	return (s);
 }
 
 /**
- * _itoa = Coverts a number string to a character string
+ * _itoa_x - Coverts a number string to a hex character string
  * @value: input string to convert
  * @s: string to store the converted string
- * Notes: Assumes base 16 
+ * Return: pointer to buffer string
+ * Notes: Assumes base 16
  */
 
 char *_itoa_x(int value, char *s)
@@ -120,5 +124,5 @@ char *_itoa_x(int value, char *s)
 
 	 _strrev(s);
 
-	 return (s);
+	return (s);
 }

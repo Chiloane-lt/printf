@@ -62,7 +62,7 @@ char *_strrev(char *s)
 {
 	int len, i = 0, j;
 	char c;
-		
+
 	if (!*s)
 	{
 		return (NULL);
@@ -81,8 +81,8 @@ char *_strrev(char *s)
 			i++;
 		}
 
-		
+
 	}
-	return(s);     
+	return (s);
 }
 
