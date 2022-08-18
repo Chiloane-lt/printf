@@ -10,12 +10,9 @@ int main()
    /*double dbl = 20.123456;*/
    
   _printf("Character is %c \n", ch);
-  _printf("Integer value is %d\n" , no);
+  _printf("Integer value is %d\n", no);
    _printf("This is a percent: %%\n");
    _printf("This string is unformated\n");
- 
-  
-  
   _printf("String is %s \n" , str);
    /*_printf("Float value is %f \n", flt);*/
     /*_printf("Double value is %lf \n", dbl);*/

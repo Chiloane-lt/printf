@@ -85,7 +85,6 @@ char *_strrev(char *s)
 
 		
 	}
-	return(s);
-        
+	return(s);     
 }
 

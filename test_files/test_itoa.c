@@ -3,7 +3,7 @@
 
 int main() {
 
-  int b = 56310;
+  int b = -56310;
 
   char s[10];
    char *ptr = s;
