@@ -6,20 +6,26 @@
 
 int _printf(const char *format, ...)
 {
-	int i, c, j;
-	char *s = malloc(sizeof(int) * 8 + 1);
+	int i, j, c;
+	char *s;
 	va_list args;
 
 	va_start(args, format);
 
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
+
+		while (format[i] != '%')
+		{	_putchar(format[i]);
+			i++;
+
+		}
+		
 		if (format[i] == '%')
 		{
 			i++;
-			
 			if (format[i] == 'c')
-			{	
+			{
 				c = (char) va_arg(args, int);
 				_putchar(c + 0);
 				break;
@@ -47,13 +53,17 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		else
-		{
-			_putchar(format[i]);
-			i++;
-		}
+		/*else if (format[i] != '%')
+                {       while (format[i] != '\0')
+			{
+				_putchar(format[i]);
+                        i++;
+			}
+
+                }*/
+
+		i++;
 	}
-	i++;
 	va_end(args);
 	return (i);
 }

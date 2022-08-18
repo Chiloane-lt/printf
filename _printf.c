@@ -1,55 +1,43 @@
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "main.h"
-
 
 int _printf(const char *format, ...)
 {
-	int i, j, c;
+	int c;
 	char *s;
+	
 	va_list args;
-
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	while (*format != '\0')
 	{
-
-		while (format[i] != '%')
-		{	_putchar(format[i]);
-			i++;
-
-		}
-		i++;
-
-		if (format[i] == 'c')
-		{	c = (char) va_arg(args, int);
-			_putchar(c + 0);
-			break;
-		}
-		else if (format[i] == 's')
+		if (*format == '%')
 		{
-			s = va_arg(args, char *);
-			_puts(s);
-			break;
-		}
-		else if (format[i] == 'd')
-		{
-			j = va_arg(args, int);
-			if (j < 0)
+			format++;
+
+			if (*format == 'c')
 			{
-				j = -j;
-				_putchar('-');
+				c = (char) va_arg(args, int);
+				_putchar(c + 0);
 			}
-			_putchar(j);
-			break;
+			if (*format == 's')
+			{
+				s = va_arg(args, char *);
+				_puts(s);
+			}
+			if (*format == '%')
+			{
+				 _putchar('%');
+			}
 		}
-		else if (format[i] == '%')
+		else /*if (*format != '%')*/
 		{
-			_putchar('%');
-			break;
+			_putchar(*format);
 		}
+
+		format++;
 	}
 	va_end(args);
-	return (i);
+	return (1);
 }
+
+
