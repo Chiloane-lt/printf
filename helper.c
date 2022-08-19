@@ -97,12 +97,13 @@ char *_strrev(char *s)
 char *_strcpy(char *dest, const char *src)
 {
 	int i = -1;
+
 	while (src[i] != '\0')
 	{
 		i++;
 		dest[i] = src[i];
 	}
-	
+
 	return (dest);
 }
 
