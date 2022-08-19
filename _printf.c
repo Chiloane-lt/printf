@@ -32,24 +32,13 @@ int _printf(const char *format, ...)
 			{
 				buffer[i] = (char) va_arg(args, int);
 				i++;
-			} else if (*format == 's')
+			}
+			else if (*format == 's')
 			{
 				s = va_arg(args, char *);
 				strcpy(&buffer[i], s);
 				i += _strlen(s);
-			} /*else if (*format == 'd')
-			{
-				_puts(_itoa((va_arg(args, int)), num));
-				i++;
-			} else if (*format == 'o')
-			{
-				_itoa_o((va_arg(args, int)), num);
-
-			} else if (*format == 'x')
-			{
-				_puts(_itoa_x((va_arg(args, int)), num));
-				i++;
-			}*/
+			}
 			else if (*format == '%')
 			{
 				buffer[i] = '%';
@@ -57,7 +46,7 @@ int _printf(const char *format, ...)
 			}
 		} else
 		{
-			buffer[i] = *format;;
+			buffer[i] = *format;
 			i++;
 		} format++;
 	} /*free(num);*/
