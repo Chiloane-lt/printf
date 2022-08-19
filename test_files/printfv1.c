@@ -1,8 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 /**
  * _printf - prints input accroding tp specified format
@@ -13,9 +10,8 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
+	int c, i = 0;
 	char *s, *num = malloc(sizeof(int) * 8 + 1);
-	char buffer[1024];
 	va_list args;
 
 	if (!num)
@@ -30,38 +26,36 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'c')
 			{
-				buffer[i] = (char) va_arg(args, int);
+				c = (char) va_arg(args, int);
+				_putchar(c + 0);
 				i++;
 			} else if (*format == 's')
 			{
 				s = va_arg(args, char *);
-				strcpy(&buffer[i], s);
-				i += _strlen(s);
-			} /*else if (*format == 'd')
+				_puts(s);
+				i++;
+			} else if (*format == 'd')
 			{
 				_puts(_itoa((va_arg(args, int)), num));
 				i++;
 			} else if (*format == 'o')
 			{
-				_itoa_o((va_arg(args, int)), num);
-
+				_puts(_itoa_o((va_arg(args, int)), num));
 			} else if (*format == 'x')
 			{
 				_puts(_itoa_x((va_arg(args, int)), num));
 				i++;
-			}*/
-			else if (*format == '%')
+			} else if (*format == '%')
 			{
-				buffer[i] = '%';
+				_putchar('%');
 				i++;
 			}
 		} else
 		{
-			buffer[i] = *format;;
+			_putchar(*format);
 			i++;
 		} format++;
-	} /*free(num);*/
-	fwrite(buffer, i, 1, stdout);
+	} free(num);
 	va_end(args);
 	return (i);
 }

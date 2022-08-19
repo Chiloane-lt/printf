@@ -86,3 +86,23 @@ char *_strrev(char *s)
 	return (s);
 }
 
+/**
+* *_strcpy - copies string to pointer
+* @dest: char type string
+* @src: char type string
+* Description: Copy string pointed by 'src' to 'dest'
+* Return: Pointer to 'dest'
+*/
+
+char *_strcpy(char *dest, const char *src)
+{
+	int i = -1;
+	while (src[i] != '\0')
+	{
+		i++;
+		dest[i] = src[i];
+	}
+	
+	return (dest);
+}
+

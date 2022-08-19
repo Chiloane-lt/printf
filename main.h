@@ -15,5 +15,6 @@ int _abs(int x);
 char *_itoa(int value, char *s);
 char *_itoa_o(int value, char *s);
 char *_itoa_x(int value, char *s);
+char *_strcpy(char *dest, const char *src);
 
 #endif
