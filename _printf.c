@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
 			i++;
 		} format++;
 	} /*free(num);*/
-	fwrite(buffer, i, 1, stdout);
+	write(1, buffer, i);
 	va_end(args);
 	return (i);
 }
