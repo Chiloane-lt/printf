@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 			buffer[i] = *format;
 			i++;
 		} format++;
-	} /*free(num);*/
+	} free(num);
 	write(1, buffer, i);
 	va_end(args);
 	return (i);
